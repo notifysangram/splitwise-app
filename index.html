@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SplitWise - Professional</title>
+    <title>SplitWise - Beautiful Bill Splitting</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <style>
         * {
@@ -14,251 +14,126 @@
 
         body {
             font-family: 'Inter', -apple-system, sans-serif;
-            background: #f5f7fa;
+            background: #f0f2f5;
             color: #1a1a2e;
             min-height: 100vh;
-            padding: 24px;
+            padding: 20px;
         }
 
-        .app-container {
-            max-width: 1200px;
+        .app {
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        /* Header */
+        /* ========== HEADER ========== */
         .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-            gap: 16px;
+            text-align: center;
+            padding: 30px 0 20px;
         }
 
-        .header-left h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1a1a2e;
+        .header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
-        .header-left p {
+        .header h1 span {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
             color: #6b7280;
-            font-size: 14px;
+            font-size: 15px;
             margin-top: 4px;
         }
 
-        .header-actions {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .btn-primary {
-            background: #4f46e5;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #4338ca;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
-        }
-
-        .btn-success {
-            background: #10b981;
-            color: white;
-        }
-
-        .btn-success:hover {
-            background: #059669;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-        }
-
-        .btn-outline {
-            background: white;
-            color: #4b5563;
-            border: 1.5px solid #e5e7eb;
-        }
-
-        .btn-outline:hover {
-            background: #f9fafb;
-            border-color: #4f46e5;
-            color: #4f46e5;
-        }
-
-        .btn-danger {
-            background: #ef4444;
-            color: white;
-        }
-
-        .btn-danger:hover {
-            background: #dc2626;
-        }
-
-        .btn-sm {
-            padding: 6px 14px;
-            font-size: 12px;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
+        /* ========== STATS BAR ========== */
+        .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 16px;
-            margin-bottom: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-bottom: 28px;
         }
 
-        .stat-card {
+        .stat {
             background: white;
-            padding: 20px;
-            border-radius: 12px;
+            padding: 16px 20px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
             border: 1px solid #e5e7eb;
-            transition: all 0.2s;
-        }
-
-        .stat-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .stat-label {
-            font-size: 13px;
-            color: #6b7280;
+            font-size: 12px;
             font-weight: 500;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .stat-value {
-            font-size: 24px;
+        .stat-number {
+            font-size: 26px;
             font-weight: 700;
-            margin-top: 4px;
             color: #1a1a2e;
+            margin-top: 2px;
         }
 
-        .stat-value.green {
+        .stat-number.green {
             color: #10b981;
         }
-        .stat-value.red {
+        .stat-number.red {
             color: #ef4444;
         }
 
-        /* Main Grid */
-        .main-grid {
+        /* ========== MAIN GRID ========== */
+        .grid {
             display: grid;
-            grid-template-columns: 1fr 1.4fr;
+            grid-template-columns: 1fr 1.2fr;
             gap: 24px;
         }
 
         @media (max-width: 768px) {
-            .main-grid {
+            .grid {
                 grid-template-columns: 1fr;
             }
         }
 
-        /* Cards */
+        /* ========== CARDS ========== */
         .card {
             background: white;
-            border-radius: 16px;
+            border-radius: 18px;
             padding: 24px;
             border: 1px solid #e5e7eb;
-            margin-bottom: 24px;
-            transition: all 0.2s;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.2s;
         }
 
         .card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         }
 
         .card-title {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
-            color: #1a1a2e;
-        }
-
-        .card-badge {
-            background: #e5e7eb;
-            color: #4b5563;
-            padding: 2px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        /* Inputs */
-        .input-group {
-            display: flex;
-            gap: 10px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             margin-bottom: 16px;
         }
 
-        .input-field {
-            flex: 1;
-            padding: 10px 14px;
-            border: 1.5px solid #e5e7eb;
-            border-radius: 10px;
-            font-size: 14px;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.2s;
-            background: white;
-        }
-
-        .input-field:focus {
-            outline: none;
-            border-color: #4f46e5;
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-        }
-
-        .input-field::placeholder {
-            color: #9ca3af;
-        }
-
-        .input-with-icon {
-            position: relative;
-            flex: 1;
-        }
-
-        .input-with-icon span {
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #6b7280;
-            font-weight: 600;
-        }
-
-        .input-with-icon input {
-            padding-left: 28px;
-        }
-
-        /* People/Avatars */
-        .people-list {
+        /* ========== PEOPLE ========== */
+        .people-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 16px;
+            gap: 8px;
+            margin-bottom: 14px;
+            min-height: 44px;
         }
 
-        .person-avatar {
+        .person-pill {
             display: flex;
             align-items: center;
             gap: 8px;
@@ -270,103 +145,271 @@
             transition: all 0.2s;
         }
 
-        .person-avatar:hover {
-            background: #e5e7eb;
-        }
-
-        .person-avatar .avatar-circle {
-            width: 32px;
-            height: 32px;
+        .person-pill .avatar {
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
-            font-size: 14px;
             color: white;
+            font-weight: 600;
+            font-size: 13px;
         }
 
-        .person-avatar .remove-person {
+        .person-pill .remove {
             cursor: pointer;
             color: #9ca3af;
             font-size: 16px;
-            margin-left: 4px;
+            line-height: 1;
             transition: color 0.2s;
         }
 
-        .person-avatar .remove-person:hover {
+        .person-pill .remove:hover {
             color: #ef4444;
         }
 
-        /* Items/Expenses */
-        .expense-item {
+        .add-person-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .add-person-row input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+            background: #fafbfc;
+        }
+
+        .add-person-row input:focus {
+            outline: none;
+            border-color: #4f46e5;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.08);
+        }
+
+        /* ========== ADD ITEM ========== */
+        .item-form .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .item-form label {
+            font-size: 12px;
+            font-weight: 500;
+            color: #6b7280;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .item-form input,
+        .item-form select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            background: #fafbfc;
+            transition: all 0.2s;
+        }
+
+        .item-form input:focus,
+        .item-form select:focus {
+            outline: none;
+            border-color: #4f46e5;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.08);
+        }
+
+        .item-form .with-icon {
+            position: relative;
+        }
+
+        .item-form .with-icon span {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        .item-form .with-icon input {
+            padding-left: 28px;
+        }
+
+        .owner-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 8px 0 12px;
+        }
+
+        .owner-selector .pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            background: #f3f4f6;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .owner-selector .pill:hover {
+            background: #e5e7eb;
+        }
+
+        .owner-selector .pill.active {
+            background: #4f46e5;
+            color: white;
+            border-color: #4f46e5;
+        }
+
+        .owner-selector .pill.owner {
+            background: #10b981;
+            color: white;
+            border-color: #10b981;
+        }
+
+        /* ========== BUTTONS ========== */
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            justify-content: center;
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        .btn-primary {
+            background: #4f46e5;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #4338ca;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-success {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #059669;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-danger {
+            background: #ef4444;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #dc2626;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #6b7280;
+            border: 1.5px solid #e5e7eb;
+        }
+
+        .btn-outline:hover {
+            background: #f9fafb;
+            border-color: #4f46e5;
+            color: #4f46e5;
+        }
+
+        .btn-sm {
+            padding: 6px 14px;
+            font-size: 12px;
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        /* ========== ITEMS LIST ========== */
+        .items-list {
+            max-height: 320px;
+            overflow-y: auto;
+        }
+
+        .item-row {
             display: flex;
             align-items: center;
             padding: 12px 14px;
-            background: #f9fafb;
-            border-radius: 10px;
-            margin-bottom: 8px;
+            background: #fafbfc;
+            border-radius: 12px;
+            margin-bottom: 6px;
             transition: all 0.2s;
             border-left: 3px solid #4f46e5;
         }
 
-        .expense-item:hover {
+        .item-row:hover {
             background: #f3f4f6;
-            transform: translateX(4px);
         }
 
-        .expense-checkbox {
-            margin-right: 12px;
-            width: 18px;
-            height: 18px;
-            accent-color: #4f46e5;
-            cursor: pointer;
-        }
-
-        .expense-content {
+        .item-row .info {
             flex: 1;
         }
 
-        .expense-name {
+        .item-row .name {
             font-weight: 600;
             font-size: 15px;
-            color: #1a1a2e;
         }
 
-        .expense-meta {
-            font-size: 13px;
+        .item-row .meta {
+            font-size: 12px;
             color: #6b7280;
             margin-top: 2px;
         }
 
-        .expense-splitters {
-            display: flex;
-            gap: 4px;
-            flex-wrap: wrap;
-            margin-top: 4px;
-        }
-
-        .expense-splitter-tag {
+        .item-row .meta .tag {
+            display: inline-block;
             background: #e5e7eb;
-            padding: 2px 10px;
+            padding: 1px 10px;
             border-radius: 12px;
             font-size: 11px;
-            color: #4b5563;
+            margin-right: 4px;
         }
 
-        .expense-right {
+        .item-row .right {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .expense-amount {
+        .item-row .amount {
             font-weight: 700;
             color: #4f46e5;
             font-size: 16px;
         }
 
-        .expense-delete {
+        .item-row .delete {
             background: none;
             border: none;
             cursor: pointer;
@@ -376,47 +419,25 @@
             padding: 4px;
         }
 
-        .expense-delete:hover {
+        .item-row .delete:hover {
             color: #ef4444;
         }
 
-        /* Checkbox Grid for Splitters */
-        .checkbox-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 12px 0;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 14px;
-            background: #f3f4f6;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 14px;
-            border: 2px solid transparent;
-        }
-
-        .checkbox-item:hover {
-            background: #e5e7eb;
-        }
-
-        .checkbox-item.active {
-            background: #4f46e5;
+        .item-row .owner-badge {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 12px;
+            background: #10b981;
             color: white;
-            border-color: #4f46e5;
         }
 
-        .checkbox-item input {
-            display: none;
+        /* ========== BALANCES ========== */
+        .balance-list {
+            margin-top: 4px;
         }
 
-        /* Balances */
-        .balance-item {
+        .balance-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -424,18 +445,18 @@
             border-bottom: 1px solid #f3f4f6;
         }
 
-        .balance-item:last-child {
+        .balance-row:last-child {
             border-bottom: none;
         }
 
-        .balance-person {
+        .balance-row .person {
             display: flex;
             align-items: center;
             gap: 10px;
             font-weight: 500;
         }
 
-        .balance-person .mini-avatar {
+        .balance-row .person .mini-avatar {
             width: 28px;
             height: 28px;
             border-radius: 50%;
@@ -447,35 +468,43 @@
             font-size: 12px;
         }
 
-        .balance-amount {
+        .balance-row .amount {
             font-weight: 700;
             font-size: 15px;
         }
 
-        .balance-positive {
+        .balance-row .amount.green {
             color: #10b981;
         }
-        .balance-negative {
+        .balance-row .amount.red {
             color: #ef4444;
         }
-        .balance-zero {
+        .balance-row .amount.gray {
             color: #6b7280;
         }
 
-        /* Empty State */
-        .empty-state {
+        .settled-badge {
             text-align: center;
-            padding: 32px 20px;
-            color: #6b7280;
+            padding: 16px;
+            color: #10b981;
+            font-weight: 600;
+            font-size: 15px;
         }
 
-        .empty-state .empty-icon {
-            font-size: 40px;
-            margin-bottom: 12px;
+        /* ========== EMPTY STATE ========== */
+        .empty {
+            text-align: center;
+            padding: 32px 16px;
+            color: #9ca3af;
+        }
+
+        .empty .icon {
+            font-size: 36px;
             display: block;
+            margin-bottom: 8px;
         }
 
-        /* Toast */
+        /* ========== TOAST ========== */
         .toast {
             position: fixed;
             bottom: 24px;
@@ -505,76 +534,12 @@
             background: #ef4444;
         }
 
-        /* Form Row */
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .form-label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            color: #4b5563;
-            margin-bottom: 4px;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            body {
-                padding: 16px;
-            }
-
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .header-actions {
-                width: 100%;
-            }
-
-            .header-actions .btn {
-                flex: 1;
-                justify-content: center;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .input-group {
-                flex-direction: column;
-            }
-
-            .card {
-                padding: 16px;
-            }
-
-            .expense-item {
-                flex-wrap: wrap;
-            }
-
-            .expense-right {
-                width: 100%;
-                justify-content: flex-end;
-                margin-top: 8px;
-            }
-        }
-
-        /* Scrollbar */
+        /* ========== SCROLLBAR ========== */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 4px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
+            background: transparent;
         }
         ::-webkit-scrollbar-thumb {
             background: #d1d5db;
@@ -584,441 +549,390 @@
             background: #9ca3af;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
             }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
 
-        .fade-in {
-            animation: fadeIn 0.3s ease;
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .card {
+                padding: 16px;
+            }
+
+            .item-form .row {
+                grid-template-columns: 1fr;
+            }
+
+            .add-person-row {
+                flex-direction: column;
+            }
+
+            .item-row {
+                flex-wrap: wrap;
+            }
+
+            .item-row .right {
+                width: 100%;
+                justify-content: flex-end;
+                margin-top: 6px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="app-container">
-        <!-- Header -->
+    <div class="app">
+
+        <!-- HEADER -->
         <div class="header">
-            <div class="header-left">
-                <h1>💰 SplitWise</h1>
-                <p>Who had what — who owes who.</p>
-            </div>
-            <div class="header-actions">
-                <button class="btn btn-outline" onclick="exportPDF()">📄 Export PDF</button>
-                <button class="btn btn-outline" onclick="exportData()">📤 Backup</button>
-                <button class="btn btn-outline" onclick="importData()">📥 Restore</button>
-            </div>
+            <h1>✨ <span>SplitWise</span></h1>
+            <p>Who had what — who owes who. No more awkward math.</p>
         </div>
 
-        <!-- Stats -->
-        <div class="stats-grid">
-            <div class="stat-card">
+        <!-- STATS -->
+        <div class="stats">
+            <div class="stat">
                 <div class="stat-label">👥 People</div>
-                <div class="stat-value" id="friendCount">0</div>
+                <div class="stat-number" id="peopleCount">0</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-label">📋 Items</div>
-                <div class="stat-value" id="expenseCount">0</div>
+            <div class="stat">
+                <div class="stat-label">🍽️ Items</div>
+                <div class="stat-number" id="itemsCount">0</div>
             </div>
-            <div class="stat-card">
+            <div class="stat">
                 <div class="stat-label">💰 Total</div>
-                <div class="stat-value" id="totalSpent">₹0.00</div>
+                <div class="stat-number" id="totalAmount">₹0</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-label">⚖️ Balance</div>
-                <div class="stat-value" id="netBalance">₹0.00</div>
+            <div class="stat">
+                <div class="stat-label">⚖️ Your Balance</div>
+                <div class="stat-number" id="yourBalance">₹0</div>
             </div>
         </div>
 
-        <!-- Main Grid -->
-        <div class="main-grid">
-            <!-- Left Column -->
+        <!-- MAIN GRID -->
+        <div class="grid">
+
+            <!-- LEFT: Add People & Items -->
             <div>
-                <!-- People -->
+
+                <!-- PEOPLE -->
                 <div class="card">
-                    <div class="card-header">
-                        <span class="card-title">👥 People</span>
-                        <span class="card-badge" id="friendBadge">0</span>
-                    </div>
-                    <div class="people-list" id="friendsList">
-                        <div class="empty-state">
-                            <span class="empty-icon">👤</span>
-                            No people added yet
+                    <div class="card-title">👥 Who's splitting?</div>
+                    <div class="people-grid" id="peopleList">
+                        <div class="empty">
+                            <span class="icon">👤</span>
+                            Add someone to get started
                         </div>
                     </div>
-                    <div class="input-group">
-                        <input type="text" id="friendName" placeholder="Add person..." class="input-field" onkeypress="if(event.key==='Enter') addFriend()" />
-                        <button class="btn btn-primary" onclick="addFriend()">Add</button>
+                    <div class="add-person-row">
+                        <input type="text" id="personInput" placeholder="Add a person..." onkeypress="if(event.key==='Enter') addPerson()" />
+                        <button class="btn btn-primary" onclick="addPerson()">Add</button>
                     </div>
                 </div>
 
-                <!-- Add Item -->
+                <!-- ADD ITEM -->
                 <div class="card">
-                    <div class="card-header">
-                        <span class="card-title">➕ Add Item</span>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="expenseDesc" placeholder="Item name..." class="input-field" />
-                    </div>
-                    <div class="form-row">
-                        <div>
-                            <label class="form-label">Amount (₹)</label>
-                            <div class="input-with-icon">
-                                <span>₹</span>
-                                <input type="number" id="expenseAmount" placeholder="0.00" class="input-field" step="0.01" min="0" />
+                    <div class="card-title">🍽️ Add an item</div>
+                    <div class="item-form">
+                        <input type="text" id="itemName" placeholder="What did they have? (e.g., Pizza, Coke)" />
+
+                        <div class="row">
+                            <div>
+                                <label>Price (₹)</label>
+                                <div class="with-icon">
+                                    <span>₹</span>
+                                    <input type="number" id="itemPrice" placeholder="0.00" step="0.01" min="0" />
+                                </div>
+                            </div>
+                            <div>
+                                <label>Who paid?</label>
+                                <select id="itemPayer">
+                                    <option value="">— Select —</option>
+                                </select>
                             </div>
                         </div>
-                        <div>
-                            <label class="form-label">Paid by</label>
-                            <select id="expensePayer" class="input-field">
-                                <option value="">Select who paid</option>
-                            </select>
+
+                        <label style="font-size:12px;font-weight:500;color:#6b7280;display:block;margin-top:6px;">Who had this?</label>
+                        <div class="owner-selector" id="ownerSelector">
+                            <span style="color:#9ca3af;font-size:13px;padding:4px 0;">Add people first</span>
                         </div>
+
+                        <button class="btn btn-success btn-block" onclick="addItem()" style="margin-top:6px;">
+                            ➕ Add Item
+                        </button>
                     </div>
-                    <div>
-                        <label class="form-label">Split between</label>
-                        <div class="checkbox-grid" id="splitCheckboxes">
-                            <div class="empty-state">Add people first</div>
-                        </div>
-                    </div>
-                    <button class="btn btn-success" onclick="addExpense()" style="width:100%;margin-top:12px;justify-content:center;">
-                        ➕ Add Item
-                    </button>
                 </div>
             </div>
 
-            <!-- Right Column -->
+            <!-- RIGHT: Items & Balances -->
             <div>
-                <!-- Items -->
+
+                <!-- ITEMS LIST -->
                 <div class="card">
-                    <div class="card-header">
-                        <span class="card-title">📋 Items</span>
-                        <button class="btn btn-danger btn-sm" onclick="clearAll()">Clear All</button>
+                    <div class="card-title" style="display:flex;justify-content:space-between;align-items:center;">
+                        <span>📋 Items</span>
+                        <button class="btn btn-outline btn-sm" onclick="clearAll()">Clear all</button>
                     </div>
-                    <div id="expensesList">
-                        <div class="empty-state">
-                            <span class="empty-icon">📭</span>
-                            No items yet
+                    <div class="items-list" id="itemsList">
+                        <div class="empty">
+                            <span class="icon">🍽️</span>
+                            No items added yet
                         </div>
                     </div>
                 </div>
 
-                <!-- Balances -->
+                <!-- BALANCES -->
                 <div class="card">
-                    <div class="card-header">
-                        <span class="card-title">⚖️ Balances</span>
-                        <button class="btn btn-success btn-sm" onclick="settleAll()">✅ Settle Up</button>
+                    <div class="card-title" style="display:flex;justify-content:space-between;align-items:center;">
+                        <span>⚖️ Who owes whom</span>
+                        <button class="btn btn-success btn-sm" onclick="settleAll()">✅ Settle up</button>
                     </div>
-                    <div id="balancesList">
-                        <div class="empty-state">
-                            <span class="empty-icon">⚖️</span>
-                            Add people to see balances
+                    <div class="balance-list" id="balanceList">
+                        <div class="empty">
+                            <span class="icon">⚖️</span>
+                            Add items to see balances
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
+
     </div>
 
-    <!-- Toast -->
+    <!-- TOAST -->
     <div id="toast" class="toast"></div>
 
     <script>
-        // ============ DATA ============
-        let friends = [];
-        let expenses = [];
+        // ============================================================
+        // DATA
+        // ============================================================
+        let people = [];
+        let items = [];
         let nextId = 1;
-        const CURRENCY = '₹';
-        const colors = ['#4f46e5', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316'];
+        const COLORS = ['#4f46e5', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316'];
 
-        // ============ STORAGE ============
-        function loadData() {
+        // ============================================================
+        // STORAGE
+        // ============================================================
+        function load() {
             try {
-                const f = localStorage.getItem('splitFriends');
-                const e = localStorage.getItem('splitExpenses');
-                const n = localStorage.getItem('splitNextId');
-                if (f) friends = JSON.parse(f);
-                if (e) expenses = JSON.parse(e);
+                const p = localStorage.getItem('sw_people');
+                const i = localStorage.getItem('sw_items');
+                const n = localStorage.getItem('sw_nextId');
+                if (p) people = JSON.parse(p);
+                if (i) items = JSON.parse(i);
                 if (n) nextId = parseInt(n);
             } catch (e) { console.error(e); }
-            renderAll();
+            render();
         }
 
-        function saveData() {
-            localStorage.setItem('splitFriends', JSON.stringify(friends));
-            localStorage.setItem('splitExpenses', JSON.stringify(expenses));
-            localStorage.setItem('splitNextId', String(nextId));
+        function save() {
+            localStorage.setItem('sw_people', JSON.stringify(people));
+            localStorage.setItem('sw_items', JSON.stringify(items));
+            localStorage.setItem('sw_nextId', String(nextId));
         }
 
-        // ============ HELPERS ============
+        // ============================================================
+        // HELPERS
+        // ============================================================
         function getColor(name) {
-            let hash = 0;
-            for (let i = 0; i < name.length; i++) {
-                hash = name.charCodeAt(i) + ((hash << 5) - hash);
-            }
-            return colors[Math.abs(hash) % colors.length];
+            let h = 0;
+            for (let i = 0; i < name.length; i++) h = name.charCodeAt(i) + ((h << 5) - h);
+            return COLORS[Math.abs(h) % COLORS.length];
         }
 
-        function formatCurrency(amount) {
-            const formatted = new Intl.NumberFormat('en-IN', {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            }).format(Math.abs(amount));
-            return amount < 0 ? `-${CURRENCY}${formatted}` : `${CURRENCY}${formatted}`;
+        function fmt(amount) {
+            const f = new Intl.NumberFormat('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(Math.abs(
+            amount));
+            return amount < 0 ? `-₹${f}` : `₹${f}`;
         }
 
-        function showToast(msg, type = 'success') {
-            const toast = document.getElementById('toast');
-            toast.textContent = msg;
-            toast.className = `toast ${type} show`;
-            clearTimeout(toast._timer);
-            toast._timer = setTimeout(() => toast.className = 'toast', 3000);
+        function toast(msg, type = 'success') {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.className = `toast ${type} show`;
+            clearTimeout(t._timer);
+            t._timer = setTimeout(() => t.className = 'toast', 2800);
         }
 
-        function calculateBalances() {
+        function getBalances() {
             const b = {};
-            friends.forEach(f => b[f] = 0);
-            expenses.forEach(e => {
-                const share = e.amount / e.splitters.length;
-                e.splitters.forEach(p => {
-                    if (p !== e.payer) {
-                        b[p] -= share;
-                        b[e.payer] += share;
+            people.forEach(p => b[p] = 0);
+            items.forEach(item => {
+                const share = item.price / item.owners.length;
+                item.owners.forEach(o => {
+                    if (o !== item.payer) {
+                        b[o] -= share;
+                        b[item.payer] += share;
                     }
                 });
             });
             return b;
         }
 
-        // ============ PEOPLE ============
-        function addFriend() {
-            const input = document.getElementById('friendName');
+        // ============================================================
+        // PEOPLE
+        // ============================================================
+        function addPerson() {
+            const input = document.getElementById('personInput');
             const name = input.value.trim();
-            if (!name) return showToast('Enter a name', 'error');
-            if (friends.includes(name)) return showToast(`${name} already exists`, 'error');
-            friends.push(name);
+            if (!name) return toast('Enter a name', 'error');
+            if (people.includes(name)) return toast(`${name} already added`, 'error');
+            people.push(name);
             input.value = '';
-            saveData();
-            renderAll();
-            showToast(`✨ ${name} added`);
+            save();
+            render();
+            toast(`✨ ${name} joined`);
         }
 
-        function removeFriend(name) {
+        function removePerson(name) {
             if (!confirm(`Remove ${name}?`)) return;
-            friends = friends.filter(f => f !== name);
-            expenses = expenses.filter(e => e.payer !== name && !e.splitters.includes(name));
-            saveData();
-            renderAll();
+            people = people.filter(p => p !== name);
+            items = items.filter(i => i.payer !== name && !i.owners.includes(name));
+            save();
+            render();
         }
 
-        // ============ ITEMS ============
-        function addExpense() {
-            const desc = document.getElementById('expenseDesc').value.trim();
-            const amount = parseFloat(document.getElementById('expenseAmount').value);
-            const payer = document.getElementById('expensePayer').value;
-            const checkboxes = document.querySelectorAll('#splitCheckboxes input:checked');
-            const splitters = Array.from(checkboxes).map(cb => cb.value);
+        // ============================================================
+        // ITEMS
+        // ============================================================
+        function addItem() {
+            const name = document.getElementById('itemName').value.trim();
+            const price = parseFloat(document.getElementById('itemPrice').value);
+            const payer = document.getElementById('itemPayer').value;
+            const ownerEls = document.querySelectorAll('#ownerSelector .pill.active');
+            const owners = Array.from(ownerEls).map(el => el.dataset.name);
 
-            if (!desc) return showToast('Enter item name', 'error');
-            if (!amount || amount <= 0) return showToast('Enter valid amount', 'error');
-            if (!payer) return showToast('Select who paid', 'error');
-            if (splitters.length === 0) return showToast('Select splitters', 'error');
+            if (!name) return toast('What did they have?', 'error');
+            if (!price || price <= 0) return toast('Enter a valid price', 'error');
+            if (!payer) return toast('Who paid?', 'error');
+            if (owners.length === 0) return toast('Who had this? Select at least one person', 'error');
 
-            expenses.push({
+            items.push({
                 id: nextId++,
-                description: desc,
-                amount: amount,
-                payer: payer,
-                splitters: splitters,
-                date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
+                name,
+                price,
+                payer,
+                owners,
+                date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })
             });
 
-            document.getElementById('expenseDesc').value = '';
-            document.getElementById('expenseAmount').value = '';
-            document.getElementById('expensePayer').value = '';
-            document.querySelectorAll('#splitCheckboxes input:checked').forEach(cb => cb.checked = false);
+            document.getElementById('itemName').value = '';
+            document.getElementById('itemPrice').value = '';
+            document.getElementById('itemPayer').value = '';
+            document.querySelectorAll('#ownerSelector .pill').forEach(el => el.classList.remove('active'));
 
-            saveData();
-            renderAll();
-            showToast(`✨ ${desc} added`);
+            save();
+            render();
+            toast(`✅ ${name} added`);
         }
 
-        function deleteExpense(id) {
-            if (!confirm('Delete this item?')) return;
-            expenses = expenses.filter(e => e.id !== id);
-            saveData();
-            renderAll();
+        function deleteItem(id) {
+            if (!confirm('Remove this item?')) return;
+            items = items.filter(i => i.id !== id);
+            save();
+            render();
         }
 
         function clearAll() {
-            if (!expenses.length) return showToast('No items to clear', 'error');
-            if (!confirm('Clear all items?')) return;
-            expenses = [];
-            saveData();
-            renderAll();
-            showToast('All items cleared');
+            if (!items.length) return toast('No items to clear', 'error');
+            if (!confirm('Remove all items?')) return;
+            items = [];
+            save();
+            render();
+            toast('All items cleared');
         }
 
         function settleAll() {
-            if (!expenses.length) return showToast('Nothing to settle', 'error');
-            if (!confirm('Settle all items?')) return;
-            expenses = [];
-            saveData();
-            renderAll();
-            showToast('✅ All settled up!');
+            if (!items.length) return toast('Nothing to settle', 'error');
+            if (!confirm('Settle all? This will clear all items.')) return;
+            items = [];
+            save();
+            render();
+            toast('✅ All settled up!');
         }
 
-        // ============ EXPORT ============
-        function exportData() {
-            const data = { friends, expenses, nextId, currency: 'INR' };
-            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = `splitwise-backup-${new Date().toISOString().slice(0, 10)}.json`;
-            a.click();
-            showToast('📤 Data exported');
-        }
-
-        function importData() {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = '.json';
-            input.onchange = (e) => {
-                const file = e.target.files[0];
-                if (!file) return;
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                    try {
-                        const data = JSON.parse(event.target.result);
-                        if (data.friends && data.expenses) {
-                            friends = data.friends;
-                            expenses = data.expenses;
-                            nextId = data.nextId || 1;
-                            saveData();
-                            renderAll();
-                            showToast('📥 Data imported');
-                        }
-                    } catch (err) {
-                        showToast('Invalid file', 'error');
-                    }
-                };
-                reader.readAsText(file);
-            };
-            input.click();
-        }
-
-        function exportPDF() {
-            if (!expenses.length && !friends.length) return showToast('Add data first', 'error');
-            showToast('📄 Generating PDF...');
-            // Simple print for now - can be enhanced with html2canvas
-            window.print();
-        }
-
-        // ============ RENDER ============
-        function renderAll() {
+        // ============================================================
+        // RENDER
+        // ============================================================
+        function render() {
             // Stats
-            document.getElementById('friendCount').textContent = friends.length;
-            document.getElementById('expenseCount').textContent = expenses.length;
-            const total = expenses.reduce((s, e) => s + e.amount, 0);
-            document.getElementById('totalSpent').textContent = formatCurrency(total);
+            document.getElementById('peopleCount').textContent = people.length;
+            document.getElementById('itemsCount').textContent = items.length;
+            const total = items.reduce((s, i) => s + i.price, 0);
+            document.getElementById('totalAmount').textContent = fmt(total);
 
-            const balances = calculateBalances();
-            const netBalance = Object.values(balances).reduce((s, b) => s + b, 0);
-            const netEl = document.getElementById('netBalance');
-            netEl.textContent = formatCurrency(netBalance);
-            netEl.className = 'stat-value ' + (netBalance >= 0 ? 'green' : 'red');
+            const balances = getBalances();
+            const yourBalance = Object.values(balances).reduce((s, b) => s + b, 0);
+            const ybEl = document.getElementById('yourBalance');
+            ybEl.textContent = fmt(yourBalance);
+            ybEl.className = 'stat-number ' + (yourBalance >= 0 ? 'green' : 'red');
 
             // People
-            document.getElementById('friendBadge').textContent = friends.length;
-            const fc = document.getElementById('friendsList');
-
-            if (friends.length === 0) {
-                fc.innerHTML = `
-                    <div class="empty-state">
-                        <span class="empty-icon">👤</span>
-                        No people added yet
-                    </div>
-                `;
+            const pl = document.getElementById('peopleList');
+            if (people.length === 0) {
+                pl.innerHTML = `<div class="empty"><span class="icon">👤</span>Add someone to get started</div>`;
             } else {
-                fc.innerHTML = friends.map(name => {
-                    const color = getColor(name);
+                pl.innerHTML = people.map(p => {
+                    const color = getColor(p);
                     return `
-                        <div class="person-avatar">
-                            <div class="avatar-circle" style="background:${color}">
-                                ${name.charAt(0).toUpperCase()}
-                            </div>
-                            ${name}
-                            <span class="remove-person" onclick="removeFriend('${name}')">×</span>
+                        <div class="person-pill">
+                            <div class="avatar" style="background:${color}">${p.charAt(0).toUpperCase()}</div>
+                            ${p}
+                            <span class="remove" onclick="removePerson('${p}')">×</span>
                         </div>
                     `;
                 }).join('');
             }
 
             // Payer dropdown
-            const ps = document.getElementById('expensePayer');
-            ps.innerHTML = '<option value="">Select who paid</option>' +
-                friends.map(f => `<option value="${f}">${f}</option>`).join('');
+            const payerSelect = document.getElementById('itemPayer');
+            payerSelect.innerHTML = '<option value="">— Select —</option>' +
+                people.map(p => `<option value="${p}">${p}</option>`).join('');
 
-            // Checkboxes
-            const cb = document.getElementById('splitCheckboxes');
-            if (friends.length === 0) {
-                cb.innerHTML = '<div class="empty-state">Add people first</div>';
+            // Owner selector
+            const os = document.getElementById('ownerSelector');
+            if (people.length === 0) {
+                os.innerHTML = `<span style="color:#9ca3af;font-size:13px;padding:4px 0;">Add people first</span>`;
             } else {
-                cb.innerHTML = friends.map(f => `
-                    <label class="checkbox-item">
-                        <input type="checkbox" value="${f}" checked />
-                        ${f}
-                    </label>
-                `).join('');
-
-                cb.querySelectorAll('.checkbox-item').forEach(label => {
-                    label.addEventListener('click', function(e) {
-                        if (e.target.tagName !== 'INPUT') {
-                            const checkbox = this.querySelector('input');
-                            checkbox.checked = !checkbox.checked;
-                            this.classList.toggle('active');
-                        }
-                    });
-                    const checkbox = label.querySelector('input');
-                    if (checkbox.checked) label.classList.add('active');
-                });
+                os.innerHTML = people.map(p => {
+                    const color = getColor(p);
+                    return `
+                        <span class="pill" data-name="${p}" style="border-color:${color}" onclick="toggleOwner(this)">
+                            ${p}
+                        </span>
+                    `;
+                }).join('');
             }
 
-            // Expenses
-            const el = document.getElementById('expensesList');
-            if (expenses.length === 0) {
-                el.innerHTML = `
-                    <div class="empty-state">
-                        <span class="empty-icon">📭</span>
-                        No items yet
-                    </div>
-                `;
+            // Items list
+            const il = document.getElementById('itemsList');
+            if (items.length === 0) {
+                il.innerHTML = `<div class="empty"><span class="icon">🍽️</span>No items added yet</div>`;
             } else {
-                el.innerHTML = expenses.slice().reverse().map(e => {
-                    const color = getColor(e.payer);
+                il.innerHTML = items.slice().reverse().map(item => {
+                    const payerColor = getColor(item.payer);
                     return `
-                        <div class="expense-item fade-in">
-                            <input type="checkbox" class="expense-checkbox" />
-                            <div class="expense-content">
-                                <div class="expense-name">${e.description}</div>
-                                <div class="expense-meta">
-                                    Paid by <span style="font-weight:500;color:${color}">${e.payer}</span>
-                                    • ${e.date || 'Today'}
-                                </div>
-                                <div class="expense-splitters">
-                                    ${e.splitters.map(s => `<span class="expense-splitter-tag">${s}</span>`).join('')}
+                        <div class="item-row">
+                            <div class="info">
+                                <div class="name">${item.name}</div>
+                                <div class="meta">
+                                    <span class="tag" style="background:${payerColor}20;color:${payerColor}">${item.payer} paid</span>
+                                    ${item.owners.map(o => `<span class="tag">${o}</span>`).join('')}
                                 </div>
                             </div>
-                            <div class="expense-right">
-                                <span class="expense-amount">${formatCurrency(e.amount)}</span>
-                                <button class="expense-delete" onclick="deleteExpense(${e.id})">✕</button>
+                            <div class="right">
+                                <span class="amount">${fmt(item.price)}</span>
+                                <button class="delete" onclick="deleteItem(${item.id})">✕</button>
                             </div>
                         </div>
                     `;
@@ -1026,55 +940,51 @@
             }
 
             // Balances
-            const bl = document.getElementById('balancesList');
-            if (friends.length === 0) {
-                bl.innerHTML = `
-                    <div class="empty-state">
-                        <span class="empty-icon">⚖️</span>
-                        Add people to see balances
-                    </div>
-                `;
+            const bl = document.getElementById('balanceList');
+            if (people.length === 0) {
+                bl.innerHTML = `<div class="empty"><span class="icon">⚖️</span>Add people to see balances</div>`;
+            } else if (items.length === 0) {
+                bl.innerHTML = `<div class="empty"><span class="icon">⚖️</span>Add items to see who owes whom</div>`;
             } else {
+                let hasTrans = false;
                 let html = '';
-                let hasTransactions = false;
-                friends.forEach(person => {
-                    const balance = balances[person] || 0;
-                    if (Math.abs(balance) > 0.01) hasTransactions = true;
-                    const color = getColor(person);
-                    let cls = 'balance-zero';
+                people.forEach(p => {
+                    const bal = balances[p] || 0;
+                    if (Math.abs(bal) > 0.01) hasTrans = true;
+                    const color = getColor(p);
+                    let cls = 'gray';
                     let display = '₹0.00';
-                    if (balance > 0.01) {
-                        cls = 'balance-positive';
-                        display = `${formatCurrency(balance)} (owed to you)`;
-                    } else if (balance < -0.01) {
-                        cls = 'balance-negative';
-                        display = `${formatCurrency(balance)} (you owe)`;
-                    }
+                    if (bal > 0.01) { cls = 'green';
+                        display = `${fmt(bal)} (owed to you)`; } else if (bal < -0.01) { cls = 'red';
+                        display = `${fmt(bal)} (you owe)`; }
                     html += `
-                        <div class="balance-item">
-                            <div class="balance-person">
-                                <div class="mini-avatar" style="background:${color}">
-                                    ${person.charAt(0).toUpperCase()}
-                                </div>
-                                ${person}
+                        <div class="balance-row">
+                            <div class="person">
+                                <div class="mini-avatar" style="background:${color}">${p.charAt(0).toUpperCase()}</div>
+                                ${p}
                             </div>
-                            <span class="balance-amount ${cls}">${display}</span>
+                            <div class="amount ${cls}">${display}</div>
                         </div>
                     `;
                 });
                 bl.innerHTML = html;
-                if (!hasTransactions && expenses.length > 0) {
-                    bl.innerHTML += `
-                        <div style="text-align:center;padding:16px;color:#10b981;font-weight:600;">
-                            ✅ All settled up!
-                        </div>
-                    `;
+                if (!hasTrans && items.length > 0) {
+                    bl.innerHTML += `<div class="settled-badge">✅ Everyone is settled up!</div>`;
                 }
             }
         }
 
-        // ============ INIT ============
-        loadData();
+        // ============================================================
+        // EVENTS
+        // ============================================================
+        function toggleOwner(el) {
+            el.classList.toggle('active');
+        }
+
+        // ============================================================
+        // INIT
+        // ============================================================
+        load();
     </script>
 
 </body>
