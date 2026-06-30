@@ -1,0 +1,6 @@
+{
+  "name": "splitwise-app",
+  "version": "1.0.0",
+  "description": "Split expenses in INR with friends",
+  "main": "index.html"
+}
